@@ -833,14 +833,252 @@ AKHIR BAGIAN 4
 ===================================================== -->
 
 
+<!-- =====================================================
+BAGIAN 5
+FASILITAS
+===================================================== -->
+
+<section id="fasilitas">
+
+    <h2 class="section-title">
+        Fasilitas
+    </h2>
+
+    <div class="facility-grid">
+
+        <!-- Ambulance -->
+        <div class="facility">
+            <i class="fa-solid fa-truck-medical"></i>
+            <h4>Ambulance</h4>
+        </div>
+
+        <!-- Area Parkir -->
+        <div class="facility">
+            <i class="fa-solid fa-square-parking"></i>
+            <h4>Area Parkir</h4>
+        </div>
+
+        <!-- Area VIP -->
+        <div class="facility">
+            <i class="fa-solid fa-crown"></i>
+            <h4>Area VIP</h4>
+        </div>
+
+        <!-- Merchandise -->
+        <div class="facility">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <h4>Merchandise Area</h4>
+        </div>
+
+        <!-- Photo Booth -->
+        <div class="facility">
+            <i class="fa-solid fa-camera-retro"></i>
+            <h4>Photo Booth</h4>
+        </div>
+
+        <!-- Seating -->
+        <div class="facility">
+            <i class="fa-solid fa-chair"></i>
+            <h4>Seating Area</h4>
+        </div>
+
+        <!-- Stage -->
+        <div class="facility">
+            <i class="fa-solid fa-microphone-lines"></i>
+            <h4>Stage Utama</h4>
+            <small>(Panggung Hiburan)</small>
+        </div>
+
+        <!-- Tempat Ibadah -->
+        <div class="facility">
+            <i class="fa-solid fa-mosque"></i>
+            <h4>Tempat Ibadah</h4>
+        </div>
+
+        <!-- Tenant Makanan -->
+        <div class="facility">
+            <i class="fa-solid fa-utensils"></i>
+            <h4>Tenant Makanan</h4>
+        </div>
+
+        <!-- Toilet -->
+        <div class="facility">
+            <i class="fa-solid fa-restroom"></i>
+            <h4>Toilet</h4>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+AKHIR BAGIAN 5
+===================================================== -->
 
 
+<!-- =====================================================
+BAGIAN 6
+MEDIA SOSIAL
+===================================================== -->
+
+<section id="media">
+
+    <h2 class="section-title">
+        Media Sosial
+    </h2>
+
+    <div class="social">
+
+        <a href="https://www.instagram.com/"
+           target="_blank"
+           title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+    </div>
+
+</section>
+
+</div>
+
+</main>
+
+<!-- =====================================================
+FOOTER
+===================================================== -->
+
+<footer>
+
+    <img src="logo.png"
+         alt="Logo SampoernaFest">
+
+    <p>
+        <i class="fa-solid fa-phone"></i>
+        Call Center :
+        +62 23 7997 7693
+    </p>
+
+    <p>
+        <i class="fa-solid fa-envelope"></i>
+        SampoernaFest@gmail.com
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 SampoernaFest Medan - SMB
+    </p>
+
+    <p>
+        PT. Bank Sahabat Sampoerna
+    </p>
+
+</footer>
+
+<!-- =====================================================
+JAVASCRIPT
+===================================================== -->
+
+<script>
+
+// Smooth Scroll
+document.querySelectorAll('.menu-tag a').forEach(link=>{
+
+link.addEventListener('click',function(e){
+
+e.preventDefault();
+
+document.querySelector(this.getAttribute('href')).scrollIntoView({
+
+behavior:'smooth'
+
+});
+
+});
+
+});
+
+// Menu Aktif Saat Scroll
+const sections=document.querySelectorAll("section");
+const navLinks=document.querySelectorAll(".menu-tag a");
+
+window.addEventListener("scroll",()=>{
+
+let current="";
+
+sections.forEach(section=>{
+
+const top=section.offsetTop-120;
+
+const height=section.clientHeight;
+
+if(pageYOffset>=top){
+
+current=section.getAttribute("id");
+
+}
+
+});
+
+navLinks.forEach(link=>{
+
+link.style.background="transparent";
+link.style.color="#222";
+
+if(link.getAttribute("href")=="#"+current){
+
+link.style.background="#D71920";
+link.style.color="#fff";
+
+}
+
+});
+
+});
 
 
+// Efek Muncul Saat Scroll
+const observer=new IntersectionObserver(entries=>{
 
+entries.forEach(entry=>{
 
+if(entry.isIntersecting){
 
+entry.target.animate([
 
+{
+opacity:0,
+transform:"translateY(40px)"
+},
+
+{
+opacity:1,
+transform:"translateY(0)"
+}
+
+],{
+
+duration:700,
+fill:"forwards"
+
+});
+
+}
+
+});
+
+});
+
+document.querySelectorAll("section").forEach(section=>{
+
+observer.observe(section);
+
+});
+
+</script>
+
+</body>
+</html>
 
 
 
